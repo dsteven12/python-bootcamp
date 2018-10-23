@@ -36,9 +36,14 @@ def convertChoice(computerChoice):
     return computerChoice
 
 #========= Main =========#
-print("=====================================================")
+print("=============================")
+print("Are you ready to play..?")
+print("...rock...")
+print("...paper...")
+print("...scissors...")
+print("=============================")
 playerChoice = input("Please select rock, paper, or scissors...")
-print("=====================================================")
+print("=============================")
 print("You chose " + playerChoice + ".")
 computerChoice = random.randint(1,3)
 computerChoice = convertChoice(computerChoice)
