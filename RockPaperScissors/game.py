@@ -6,27 +6,30 @@ def compareChoices(playerChoice, computerChoice):
     tieGame = "You've come to a draw!"
     youWon = "You won!"
     compWon = "The Computer won the game!"
-    if(playerChoice == "rock"):
-        if(computerChoice == "rock"):
-            return tieGame
-        elif(computerChoice == "paper"):
-            return compWon
+    if(playerChoice == computerChoice): 
+        return tieGame
+    else: 
+        if(playerChoice == "rock"):
+            if(computerChoice == "rock"):
+                return tieGame
+            elif(computerChoice == "paper"):
+                return compWon
+            else:
+                return youWon
+        elif(playerChoice == "paper"):
+            if(computerChoice == "rock"):
+                return youWon
+            elif(computerChoice == "paper"):
+                return tieGame
+            else:
+                return compWon
         else:
-            return youWon
-    elif(playerChoice == "paper"):
-        if(computerChoice == "rock"):
-            return youWon
-        elif(computerChoice == "paper"):
-            return tieGame
-        else:
-            return compWon
-    else:
-        if(computerChoice == "rock"):
-            return compWon
-        elif(computerChoice == "paper"):
-            return youWon
-        else:
-            return tieGame
+            if(computerChoice == "rock"):
+                return compWon
+            elif(computerChoice == "paper"):
+                return youWon
+            else:
+                return tieGame
             
 def convertChoice(computerChoice):
     """Convert Random INT into rock, paper, or scissors"""
