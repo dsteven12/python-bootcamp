@@ -10,26 +10,20 @@ def compareChoices(playerChoice, computerChoice):
         return tieGame
     else: 
         if(playerChoice == "rock"):
-            if(computerChoice == "rock"):
-                return tieGame
-            elif(computerChoice == "paper"):
+            if(computerChoice == "paper"):
                 return compWon
             else:
                 return youWon
         elif(playerChoice == "paper"):
             if(computerChoice == "rock"):
                 return youWon
-            elif(computerChoice == "paper"):
-                return tieGame
             else:
                 return compWon
         else:
             if(computerChoice == "rock"):
                 return compWon
-            elif(computerChoice == "paper"):
-                return youWon
             else:
-                return tieGame
+                return youWon
             
 def convertChoice(computerChoice):
     """Convert Random INT into rock, paper, or scissors"""
