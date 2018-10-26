@@ -11,10 +11,18 @@ def smileyPrint(userInput):
     smileys * int selected by user"""
     for num in range(1, userInput):
         print("\U0001f600" * num)
+        
+def smileyPrintRev(userInput):
+    for num in range(1, userInput):
+        print("\U0001f600" * (userInput-num))
     
 def main():
     userInput = userNum()
     smileyPrint(userInput)
+    print("\U0001f600" * userInput)
+    smileyPrintRev(userInput)
+    
+    print("s" * 4)
     
 main()
     
