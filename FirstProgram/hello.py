@@ -1,5 +1,4 @@
 s = " "
-print("What is your name: ")
-name = input()
+name = input("What is your name? ")
 seq = ["Hello", name + "!"]
 print(s.join(seq))

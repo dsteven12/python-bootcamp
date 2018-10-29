@@ -21,8 +21,6 @@ def main():
     smileyPrint(userInput)
     print("\U0001f600" * userInput)
     smileyPrintRev(userInput)
-    
-    print("s" * 4)
-    
+ 
 main()
     
