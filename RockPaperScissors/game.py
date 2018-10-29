@@ -40,32 +40,23 @@ def convertChoice(computerChoice):
         computerChoice = "scissors"
     return computerChoice
 
-def givePoints(winner, playerScore, computerScore):   
-    if (winner.find('you') != -1):
-        return playerScore + 1
-    elif (winner.find('draw') != -1):
-        return
-    else: 
-        return computerScore + 1
-            
-
 #========= Main =========#
 playerScore = 0
 computerScore = 0
 playerChoice = ""
-winner = ""
+winningScore = 3
 
 print("=============================")
-print("Are you ready to play..?")
+print("Are you ready to play..? (Best of 3")
 print("...rock...")
 print("...paper...")
 print("...scissors...")
 print("=============================")
-while (playerChoice != "quit"):
-    playerChoice = input("Please select rock, paper, or scissors (or type 'quit' to quit)...")
-    if (playerChoice != "quit"):
-        if ((playerChoice != "rock") or (playerChoice != "paper") or (playerChoice != "scissors")):
-            playerChoice = input("Please select rock, paper, or scissors (or type quit to quit)...")   
+while (playerScore < winningScore and computerScore < winningScore):
+    if ((playerChoice != "rock") or (playerChoice != "paper") or (playerChoice != "scissors") or (playerChoice != "quit")):
+        playerChoice = input("Please select rock, paper, or scissors (or type quit to quit)...")   
+        if (playerChoice.lower() == "quit"):
+            break
     print("=============================")
     print("You chose " + playerChoice + ".")
     computerChoice = random.randint(1,3)
@@ -81,6 +72,14 @@ while (playerChoice != "quit"):
         computerScore += 1
     else: 
         print("Tie Game, no one received points!")
-    print(f"Your score is {playerScore}")
-    print(f"The computer's score is {computerScore}")
+    print(f"Your score: {playerScore} ::: Computer's score: {computerScore}")
     print("=============================================")
+if (playerScore > computerScore):
+    print("CONGRATS! You won!")
+elif (playerScore < computerScore): 
+    print("OH NO, you lost...")
+elif (playerScore == computerScore):
+    print("IT'S A TIE!")
+else:
+    print("Thanks for playing!")
+print(f"FINAL SCORES: Your score: {playerScore} ::: Computer's score: {computerScore}")
